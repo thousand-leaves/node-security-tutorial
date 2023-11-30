@@ -6,6 +6,10 @@ const Contact = mongoose.model('Contact', ContactSchema);
 export const addNewContact = (req, res) => {
     let newContact = new Contact(req.body);
 
+    // write if statement => if (validator.isEmail(newContact.email)) then..
+    // run the code below
+    // otherwise, send an error message
+
     newContact.save((err, contact) => {
         if (err) {
             res.send(err);
